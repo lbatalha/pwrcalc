@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
+<title>Power to Weight Calculator</title>
 
 
-
-
+<body bgcolor="#000">
+<font color="white">
 <?php
 
-$kw_per_hp = 0.74569987;
+$kw_per_hp = 0.74569987; //constant conversion ratios
 $lb_per_kg = 2.20462;
 
-$hp_ton = 0;
-$kw_ton = 0;
-	
-$hp_kg = 0;
-$kw_kg = 0;
-
-$kg_hp = 0;
-$kg_kw = 0;
+$hp_ton = 0;	//
+$kw_ton = 0;	//
+				//	Init stuff
+$hp_kg = 0;		//
+$kw_kg = 0;		//
+				//
+$kg_hp = 0;		//
+$kg_kw = 0;		//
+				//
+$lb_hp = 0;		//
 
 if(isset($_POST['create']))
 {
@@ -48,10 +51,7 @@ if(isset($_POST['create']))
 	$kg_hp = $mass_kg / $pwr_hp;
 	$kg_kw = $mass_kg / $pwr_kw;	
 
-	$lb_jp = $mass_lb / $pwr_hp;	
-	
-	echo $_POST['mass_unit'];
-	echo $_POST['pwr_unit'];
+	$lb_hp = $mass_lb / $pwr_hp;	
 
 }
 ?>
@@ -59,6 +59,7 @@ if(isset($_POST['create']))
 
 <div align="center">
 	Power to Weight Ratio Calculator
+	<br>
 	<form method="post" action="<?php $_PHP_SELF ?>">
 	
 	<table id="form_table">
@@ -112,3 +113,5 @@ if(isset($_POST['create']))
 	
 	</form>
 </div>
+</font>
+</body>
